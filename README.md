@@ -1,5 +1,5 @@
 # One-Dark
-![screenshot](https://github.com/r3tex/one-dark/raw/master/screenshot.jpg)
+![screenshot](https://github.com/r3tex/one-dark/raw/master/screenshot.png)
 
 
 This colorscheme uses the following values:
