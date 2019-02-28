@@ -60,6 +60,7 @@ The second part is installing the [Airline](https://github.com/vim-airline/vim-a
 
 Last but not least you need to edit your `.vimrc` to include the following lines:
 ```set background=dark
+set termguicolors
 set noshowmode
 colorscheme onedark
 let g:airline#extensions#tabline#enabled = 1
