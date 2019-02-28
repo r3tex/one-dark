@@ -84,7 +84,7 @@ Start your julia REPL and type:
 julia> Pkg.add("OhMyREPL")
 julia> using OhMyREPL
 ```
-OhMyREPL will merge my onedark theme soon, but until then you can include the following in your `~/.julia/config/startup.jl`
+OhMyREPL has added my onedark theme now, but it's the same as including the following in your `~/.julia/config/startup.jl`
 ```using REPL
 atreplinit() do repl
     repl.interface = REPL.setup_interface(repl)
