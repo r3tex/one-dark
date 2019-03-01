@@ -1,8 +1,7 @@
 # One-Dark
 ![screenshot](https://github.com/r3tex/one-dark/raw/master/screenshot.png)
 
-
-This colorscheme uses the following values:
+The one-dark color scheme uses the following values:
 
 |Color Name|RGB|Hex|
 | :--- | ---: | ---: |
@@ -19,7 +18,7 @@ This colorscheme uses the following values:
 | Gutter Grey  | 76; 82; 99    | #4b5263 |
 | Comment Grey | 92; 99; 112   | #5c6370 |
 
-In order to use most of these files you need a terminal with 256-color support. In `Windows Subsystem for Linux` I recommend the [WSLtty](https://github.com/mintty/wsltty) terminal. Remember to set Options... -> Terminal -> Type -> `xterm-256color`.
+In order to get colors to render correctly you need a terminal with 24-bit color support. In `Windows Subsystem for Linux` I recommend the [WSLtty](https://github.com/mintty/wsltty) terminal. Remember to set Options... -> Terminal -> Type -> `xterm-256color`.
 
 I've included everything you need in this repo, but you're welcome to download things like vim plugins yourself instead of copying mine if you want to be sure you have the latest versions.
 
@@ -38,25 +37,24 @@ So to the escape code for one-dark magenta is first `00` for no attribute, `38` 
 
 ### Setting the prompt
 
-Rename `bashrc` to `.bashrc` and place in your home directory. The relevant line which changes colors is:
+The relevant line which changes colors is:
 
 ```PS1="\[\e[38;2;224;108;117m\]\h \[\e[38;2;97;175;239m\]\w \[\e[m\]\$ "```
 
 Note how one must surround the color codes with `\[\e[` and `m\]` after. The same thing goes for other places where color can affect you such as when updating your terminal title with `\e]0;$(dirs)\a`.
 
 ### Setting dircolors
+Place `~/.dircolors` in your home directory, and include the line `test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"` in your `~/.bashrc`.
 
-Rename `dircolors` to `.dircolors`, place in your home directory, and include the line `test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"` in your `.bashrc`.
-
-I've chosen an arbitrary set of colorations for filetypes that I think are important, but feel free to edit the file to hilight filetypes that are relevant to you.
+I've chosen a set of colorations for filetypes that are important to me, but feel free to edit the dircolors file to hilight filetypes that are relevant to you.
 
 ## Fonts
-For the vim and tmux themes to work, you need good UTF8 support. I recommend [Fira Code](https://github.com/tonsky/FiraCode) or 
+For the vim and tmux themes to work, you need good UTF8 support. I recommend [Fira Code](https://github.com/tonsky/FiraCode) or [Hack](https://github.com/source-foundry/Hack).
 
 ## VIM
-Vim has a nice one-dark theme also available [here](https://github.com/joshdick/onedark.vim), or you can just grab the `vim/colors/onedark.vim` and add it to your own `~/.vim/colors/` folder.
+Vim has a nice one-dark theme also available [here](https://github.com/joshdick/onedark.vim). You really want to have vim 8.0+ to get `termguicolors` support.
 
-The second part is installing the [Airline](https://github.com/vim-airline/vim-airline) and [Airline Themes](https://github.com/vim-airline/vim-airline-themes) plugins, or you can just copy my `vim/plugin` folder into your own `~/.vim`.
+The second part is installing the [Airline](https://github.com/vim-airline/vim-airline) and [Airline Themes](https://github.com/vim-airline/vim-airline-themes) plugins.
 
 Last but not least you need to edit your `.vimrc` to include the following lines:
 ```set background=dark
@@ -67,10 +65,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:bufferline_echo = 0
 ```
-or just rename my `vimrc` to `.vimrc` and place it in your home directory.
 
 ## Tmux
-Include the following in your `~/.tmux.conf` file, or just copy the one in this repo.
+Include the following in your `~/.tmux.conf` file.
 ```set -g status-bg black
 set -g status-fg white
 set -g default-terminal "xterm-256color"
