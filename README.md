@@ -36,22 +36,18 @@ Color escape codes in bash work like this:
 ```
 So to the escape code for one-dark magenta is first `00` for no attribute, `38` for text, `2` for RGB, `198;120;221` for the color itself. In other words, `00;38;2;198;120;221`.
 
+## Fonts
+For the bash, vim, and tmux themes to work, you need good UTF8 support. I recommend [Fira Code](https://github.com/tonsky/FiraCode) or
+
 ### Setting the prompt
 
-Rename `bashrc` to `.bashrc` and place in your home directory. The relevant line which changes colors is:
-
-```PS1="\[\e[38;2;224;108;117m\]\h \[\e[38;2;97;175;239m\]\w \[\e[m\]\$ "```
-
-Note how one must surround the color codes with `\[\e[` and `m\]` after. The same thing goes for other places where color can affect you such as when updating your terminal title with `\e]0;$(dirs)\a`.
+Rename `bashrc` to `.bashrc` and `onedark_prompt.sh` to `.onedark_prompt.sh` and place both in your home directory. The prompt makes nice use of powerline symbols and colorizes git directories in a useful way.
 
 ### Setting dircolors
 
 Rename `dircolors` to `.dircolors`, place in your home directory, and include the line `test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"` in your `.bashrc`.
 
 I've chosen an arbitrary set of colorations for filetypes that I think are important, but feel free to edit the file to hilight filetypes that are relevant to you.
-
-## Fonts
-For the vim and tmux themes to work, you need good UTF8 support. I recommend [Fira Code](https://github.com/tonsky/FiraCode) or 
 
 ## VIM
 Vim has a nice one-dark theme also available [here](https://github.com/joshdick/onedark.vim), or you can just grab the `vim/colors/onedark.vim` and add it to your own `~/.vim/colors/` folder.
