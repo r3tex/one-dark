@@ -27,7 +27,9 @@ For the bash, vim, and tmux themes to work, you need good UTF8 support. I recomm
 
 ## Bash
 Color escape codes in bash work like this:
-```### Attribute codes:
+
+```sh
+### Attribute codes:
 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
 ### Text color codes:
 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white 38=custom
@@ -53,7 +55,9 @@ Vim has a nice one-dark theme also available [here](https://github.com/joshdick/
 The second part is installing the [Airline](https://github.com/vim-airline/vim-airline) and [Airline Themes](https://github.com/vim-airline/vim-airline-themes) plugins.
 
 Last but not least you need to edit your `.vimrc` to include the following lines:
-```set background=dark
+
+```vim
+set background=dark
 set termguicolors
 set noshowmode
 colorscheme onedark
@@ -64,7 +68,9 @@ let g:bufferline_echo = 0
 
 ## Tmux
 Include the following in your `~/.tmux.conf` file.
-```set -g status-bg black
+
+```sh
+set -g status-bg black
 set -g status-fg white
 set -g default-terminal "xterm-256color"
 set-option -ga terminal-overrides "xterm-256color"
@@ -73,12 +79,15 @@ Install the [tmuxline](https://github.com/edkolev/tmuxline.vim) plugin for vim. 
 
 ## Julia
 Start your julia REPL and type:
-```julia> using Pkg
+
+```julia
+julia> using Pkg
 julia> Pkg.add("OhMyREPL")
 julia> using OhMyREPL
 ```
 OhMyREPL has added my onedark theme now, but it's the same as including the following in your `~/.julia/config/startup.jl`
-```
+
+```julia
 using REPL
 atreplinit() do repl
     repl.interface = REPL.setup_interface(repl)
