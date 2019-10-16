@@ -78,7 +78,8 @@ julia> Pkg.add("OhMyREPL")
 julia> using OhMyREPL
 ```
 OhMyREPL has added my onedark theme now, but it's the same as including the following in your `~/.julia/config/startup.jl`
-```using REPL
+```
+using REPL
 atreplinit() do repl
     repl.interface = REPL.setup_interface(repl)
     Base.active_repl.interface.modes[1].prompt_prefix = "\e[38;2;152;195;121m"
