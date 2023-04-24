@@ -6,6 +6,16 @@ set background=dark
 set noshowmode
 set termguicolors
 
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'https://github.com/edkolev/tmuxline.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+call plug#end()
+
 colorscheme onedark
 
 let g:airline#extensions#tabline#enabled = 1
@@ -21,3 +31,4 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
+lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}

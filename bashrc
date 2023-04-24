@@ -9,6 +9,7 @@ export HISTFILESIZE=10000
 export HISTTIMEFORMAT="%d/%m/%y %T "
 PROMPT_COMMAND='echo -en "\e]0;$(dirs)\a"'
 PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
+export TERM=screen-256color
 
 export DISPLAY=192.168.1.2:1.0
 
