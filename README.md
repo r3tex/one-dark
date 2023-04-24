@@ -23,7 +23,7 @@ In order to get colors to render correctly you need a terminal with 24-bit color
 I've included everything you need in this repo, but you're welcome to download things like vim plugins yourself instead of copying mine if you want to be sure you have the latest versions.
 
 ## Fonts
-For the bash, vim, and tmux themes to work, you need good UTF8 support. I recommend [Fira Code](https://github.com/tonsky/FiraCode) or [Hack](https://github.com/source-foundry/Hack).
+For the bash, vim, and tmux themes to work, you need good UTF8 support. I recommend [Julia Mono](https://juliamono.netlify.app/) with [NerdFont](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip) using the patcher like `python3 ./font-patcher --mono --complete --careful JuliaMono-Regular.ttf`. 
 
 ## Bash
 Color escape codes in bash work like this:
@@ -49,8 +49,8 @@ Place `~/.dircolors` in your home directory, and include the line `test -r ~/.di
 
 I've chosen a set of colorations for filetypes that are important to me, but feel free to edit the dircolors file to hilight filetypes that are relevant to you.
 
-## VIM
-Vim has a nice one-dark theme also available [here](https://github.com/joshdick/onedark.vim). You really want to have vim 8.0+ to get `termguicolors` support.
+## Neo VIM
+Add the init.vim to your '.config/nvim/init.vim', and install the vim-plug manager using 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' or just copy my 'plug.vim' into your '.local/share/nvim/site'. Now you can just type type ':PlugInstall', and voila! It will install all the plugins automatically.
 
 The second part is installing the [Airline](https://github.com/vim-airline/vim-airline) and [Airline Themes](https://github.com/vim-airline/vim-airline-themes) plugins.
 
@@ -95,22 +95,6 @@ atreplinit() do repl
 end
 
 using OhMyREPL
-using Crayons
-import OhMyREPL: Passes.SyntaxHighlighter
-
-scheme = SyntaxHighlighter.ColorScheme()
-SyntaxHighlighter.string!(scheme, Crayon(foreground = (152,195,121)))
-SyntaxHighlighter.symbol!(scheme, Crayon(foreground = (224,108,117)))
-SyntaxHighlighter.comment!(scheme, Crayon(foreground = (92,99,112)))
-SyntaxHighlighter.call!(scheme, Crayon(foreground = (97,175,239)))
-SyntaxHighlighter.op!(scheme, Crayon(foreground = (198,120,221)))
-SyntaxHighlighter.keyword!(scheme, Crayon(foreground = (224,108,117)))
-SyntaxHighlighter.error!(scheme, Crayon(foreground = (190,80,70)))
-SyntaxHighlighter.argdef!(scheme, Crayon(foreground = (229,192,123)))
-SyntaxHighlighter.macro!(scheme, Crayon(foreground = (198,120,221)))
-SyntaxHighlighter.number!(scheme, Crayon(foreground = (209,154,102)))
-SyntaxHighlighter.function_def!(scheme, Crayon(foreground = (171, 178, 191)))
-SyntaxHighlighter.add!("OneDark", scheme)
 colorscheme!("OneDark")
 OhMyREPL.enable_pass!("RainbowBrackets", false)
 ```
