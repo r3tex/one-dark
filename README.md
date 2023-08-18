@@ -50,7 +50,7 @@ Place `~/.dircolors` in your home directory, and include the line `test -r ~/.di
 I've chosen a set of colorations for filetypes that are important to me, but feel free to edit the dircolors file to hilight filetypes that are relevant to you.
 
 ## Neo VIM
-Add the init.vim to your '.config/nvim/init.vim', and install the vim-plug manager using 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' or just copy my 'plug.vim' into your '.local/share/nvim/site'. Now you can just type type ':PlugInstall', and voila! It will install all the plugins automatically.
+Add the init.vim to your `.config/nvim/init.vim`, and install the vim-plug manager using `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim` or just copy my `plug.vim` into your `.local/share/nvim/site`. Now you can just type type `:PlugInstall`, and voila! It will install all the plugins automatically.
 
 The second part is installing the [Airline](https://github.com/vim-airline/vim-airline) and [Airline Themes](https://github.com/vim-airline/vim-airline-themes) plugins.
 
